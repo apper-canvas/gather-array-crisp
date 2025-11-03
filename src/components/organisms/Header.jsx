@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import UserMenu from "@/components/molecules/UserMenu";
-import { useAuth } from "@/hooks/useAuth";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated } = useSelector((state) => state.user);
   const location = useLocation();
 
   const publicNavItems = [
